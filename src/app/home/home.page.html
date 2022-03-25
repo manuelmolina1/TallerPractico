@@ -1,0 +1,26 @@
+
+<ion-header>
+  <ion-toolbar>
+<ion-nav>
+<ion-title><p align="center">Adivina el numero Secreto</p></ion-title>
+</ion-nav>
+</ion-toolbar>
+</ion-header>
+
+<ion-content padding >
+  <div class="content">
+<ion-input   type="number" min="1" max="100" [(ngModel)]="num" placeholder="introduce Aqui un numero del 1 al 100" class="x" ></ion-input>
+
+<p> El numero secreto es {{mayormenor }}  {{num}}</p>
+<ion-card *ngIf="mayormenor=='igual'" class="b">
+<ion-card-header> <b style="color: white;"> ¡¡¡Enhorabuena!!!</b>
+</ion-card-header>
+<ion-card-content>
+ <b style="color: white;"> Has acertado, el numero secreto es el: {{num}}</b>
+</ion-card-content>
+</ion-card>
+
+<ion-button *ngIf="mayormenor!='igual'"  ion-button block (click)="compruebaNumero()" class="a" (click)="acumulador()">Adivina</ion-button>
+<ion-button *ngIf="mayormenor=='igual'" ion-button block (click)="reinicia()" class="c">VOLVER A JUGAR</ion-button>
+</div>
+</ion-content>
